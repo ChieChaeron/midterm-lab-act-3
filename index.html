@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <h1>IT Seminar Registration</h1>
+        <form id="registrationForm" novalidate>
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required aria-invalid="false" aria-describedby="fullNameError">
+                <span id="fullNameError" class="error-message" role="alert"></span>
+            </div>
+
+            <!-- Student Number -->
+            <div class="form-group">
+                <label for="studentNumber">Student Number</label>
+                <input type="text" id="studentNumber" name="studentNumber" required aria-invalid="false" aria-describedby="studentNumberError">
+                <span id="studentNumberError" class="error-message" role="alert"></span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required aria-invalid="false" aria-describedby="emailError">
+                <span id="emailError" class="error-message" role="alert"></span>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number</label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" required aria-invalid="false" aria-describedby="mobileNumberError">
+                <span id="mobileNumberError" class="error-message" role="alert"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required aria-invalid="false" aria-describedby="passwordError passwordFeedback">
+                <span id="passwordError" class="error-message" role="alert"></span>
+                <span id="passwordFeedback" class="feedback-message"></span>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required aria-invalid="false" aria-describedby="confirmPasswordError">
+                <span id="confirmPasswordError" class="error-message" role="alert"></span>
+            </div>
+
+            <!-- Course -->
+            <div class="form-group">
+                <label for="course">Course</label>
+                <select id="course" name="course" required aria-invalid="false" aria-describedby="courseError">
+                    <option value="" disabled selected>Select your course</option>
+                    <option value="BSIT">BSIT</option>
+                    <option value="BSCS">BSCS</option>
+                </select>
+                <span id="courseError" class="error-message" role="alert"></span>
+            </div>
+
+            <!-- Terms Agreement -->
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required aria-invalid="false" aria-describedby="termsError">
+                <label for="terms">I agree to the terms and conditions</label>
+                <span id="termsError" class="error-message" role="alert"></span>
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button type="submit" id="registerBtn">Register</button>
+                <button type="reset" id="resetBtn">Reset</button>
+            </div>
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message hidden" role="status"></div>
+
+        <!-- Registration Summary -->
+        <div id="registrationSummary" class="registration-summary hidden">
+            <h2>Registration details validated successfully!</h2>
+            <p><strong>Name:</strong> <span id="summaryName"></span></p>
+            <p><strong>Student Number:</strong> <span id="summaryStudentNumber"></span></p>
+            <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
+            <p><strong>Mobile Number:</strong> <span id="summaryMobileNumber"></span></p>
+            <p><strong>Course:</strong> <span id="summaryCourse"></span></p>
+        </div>
+    </main>
+
+    <script src="js/app.js" defer></script>
+</body>
+</html>
